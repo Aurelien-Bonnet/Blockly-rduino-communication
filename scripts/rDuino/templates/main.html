@@ -37,10 +37,15 @@ function updateResult() {
 }
 timer1 = setInterval('updateResult()', 1000 * 1);
 
+function pageScroll() {
+window.scrollBy(0,50);
+scrolldelay = setTimeout('pageScroll()',200); //Increase this # to slow down, decrease to speed up scrolling
+}
+
 </script>
 
 </head>
-<body>
+<body onload="pageScroll()">
     <div class="section_result"><span id=section_result>{{ result|safe }}</span></div>
     <div class="section_error"><span id=section_error>{{ error|safe }}</span></div>
     <div class="section_indicator" id=section_indicator></div><br/>
